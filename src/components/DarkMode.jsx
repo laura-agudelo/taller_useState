@@ -1,22 +1,9 @@
 import { useState } from "react";
-
-const DarkMode = () => {
+export default function DarkModeToggle() {
   const [darkMode, setDarkMode] = useState(false);
-
   return (
-    <div style={{
-      backgroundColor: darkMode ? "black" : "white",
-      color: darkMode ? "white" : "black",
-      height: "100vh",
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center"
-    }}>
-      <button onClick={() => setDarkMode(!darkMode)}>
-        {darkMode ? "Modo Claro" : "Modo Oscuro"}
-      </button>
-    </div>
+    <button className="p-2 mb-4 border rounded" onClick={() => setDarkMode(!darkMode)}>
+      {darkMode ? "Modo Light" : "Modo Dark"}
+    </button>
   );
-};
-
-export default DarkMode;
+}

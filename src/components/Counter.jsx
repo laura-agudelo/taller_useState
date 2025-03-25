@@ -1,28 +1,23 @@
 import { useState, useEffect } from "react";
-
-const Counter = () => {
+export default function TimerCounter() {
   const [contador, setContador] = useState(0);
   const [activo, setActivo] = useState(false);
-
   useEffect(() => {
-    let interval = null;
+    let intervalo;
     if (activo) {
-      interval = setInterval(() => {
-        setContador(prev => prev + 1);
+      intervalo = setInterval(() => {
+        setContador((prev) => prev + 1);
       }, 1000);
     } else {
-      clearInterval(interval);
+      setContador(0);
     }
-    return () => clearInterval(interval);
+    return () => clearInterval(intervalo);
   }, [activo]);
-
   return (
-    <div>
-      <h1>Tiempo: {contador} s</h1>
-      <button onClick={() => setActivo(true)}>Iniciar</button>
-      <button onClick={() => { setActivo(false); setContador(0); }}>Parar</button>
+    <div className="mb-4 text-xl font-bold">
+      Tiempo: {contador}s
+      <button className="p-2 m-2 border rounded bg-blue-500" onClick={() => setActivo(true)}>Iniciar</button>
+      <button className="p-2 m-2 border rounded bg-red-500" onClick={() => setActivo(false)}>Parar</button>
     </div>
   );
-};
-
-export default Counter;
+}

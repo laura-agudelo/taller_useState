@@ -2,13 +2,8 @@ body {
   font-family: Arial, sans-serif;
   text-align: center;
 }
+
 button {
-  margin: 10px;
-  padding: 10px 20px;
-  cursor: pointer;
-}
-button {
-  font-size: 16px;
   margin: 10px;
   padding: 10px 20px;
   cursor: pointer;
@@ -16,4 +11,11 @@ button {
   border: none;
   background-color: #007bff;
   color: white;
+}
+button {
+  background-color: white; 
+  color: black; 
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px;
 }
